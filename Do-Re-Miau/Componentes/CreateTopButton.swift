@@ -13,25 +13,23 @@ struct CreateTopButton: View {
     let action_status: String
     
     var body: some View {
-        Button(action: {
+        Button {
             print("\(action_status)")
-        }) {
-            Label(label, systemImage: icon)
-                .imageScale(.large)
-                .foregroundStyle(.corBackground)
-                .fontWeight(.bold)
-        }
-        .labelStyle(.iconOnly)
-        .padding()
-        .frame(width: 70, height: 70)
-        .background(Color.corBotao)
-        .cornerRadius(35)
-        .shadow(color: .gray, radius: 1, x: 0, y: 2)
-        .background {
-            Text("\(label)")
-                .offset(y: 59)
-                .foregroundStyle(.corBotao)
-                .fontWeight(.bold)
+        }label:{
+            VStack {
+                ZStack {
+                    Circle()
+                        .fill(.corBotao)
+                    Image(systemName: "\(icon)")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundStyle(.white)
+                        .padding(30)
+                }
+                .frame(width: 100, height: 100)
+                
+                Text("\(label)")
+            }
         }
     }
 }
