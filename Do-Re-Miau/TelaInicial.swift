@@ -1,5 +1,5 @@
 //
-//  TelaInicial.swift
+//  Inicial.swift
 //  Do-Re-Miau
 //
 //  Created by User on 05/12/25.
@@ -19,11 +19,12 @@ struct ContentView: View {
                         HStack {
                             CreateTopButton(label: "Ajuda", icon: "questionmark", action_status: "Ajudando...")
                             
+                            
                             Spacer()
                             
                             CreateTopButton(label: "Menu", icon: "line.3.horizontal", action_status: "Menuzando...")
                         }
-//                        .background(.red)
+                        .padding(.horizontal, 20)
                         
                         Spacer()
                         
@@ -37,11 +38,10 @@ struct ContentView: View {
                             CreateButton(label: "Opções", icon: "line.3.horizontal", action_status: "Abrindo o menu de opções...")
                             CreateButton(label: "Sair", icon: "xmark", action_status: "Saindo...")
                         }
-                        .padding(.bottom,30)
+                        .padding(.bottom,60)
                         
                     }
                     .padding()
-//                    .background()
                 }
                 
             }

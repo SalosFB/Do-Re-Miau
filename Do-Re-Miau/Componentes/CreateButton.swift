@@ -25,7 +25,6 @@ struct CreateButton: View {
         .shadow(color: .gray, radius: 1, x: 0, y: 2)
     }
 }
-
 #Preview {
     CreateButton(label: "Play", icon: "play", action_status: "Entrando...")
 }

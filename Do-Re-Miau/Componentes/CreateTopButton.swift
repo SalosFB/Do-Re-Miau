@@ -29,6 +29,9 @@ struct CreateTopButton: View {
                 .frame(width: 100, height: 100)
                 
                 Text("\(label)")
+                .fontWeight(.bold)
+                .foregroundStyle(.corBotao)
+                .padding(.top, 4)
             }
         }
     }
