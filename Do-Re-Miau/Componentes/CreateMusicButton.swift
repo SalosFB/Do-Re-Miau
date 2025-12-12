@@ -7,12 +7,28 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct CreateMusicButton: View {
+    let label: String
+    let icon: String
+    let action_status: String
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            print("\(action_status)")
+        }) {
+            Label(label, systemImage: icon)
+                .imageScale(.large)
+                .foregroundStyle(.corBotao)
+        }
+        .padding()
+        .frame(height: 50)
+        .frame(minWidth: 140)
+        .background(Color.corBackground)
+        .cornerRadius(50)
+        .shadow(color: .gray, radius: 1, x: 0, y: 2)
     }
 }
 
 #Preview {
-    SwiftUIView()
+    CreateMusicButton(label: "Pausar Música", icon: "forward.fill", action_status: "teste")
 }
