@@ -10,18 +10,14 @@ import SwiftUI
 struct CreateButton: View {
     let label: String?
     let icon: String?
-    let action_status: String?
     let widht: CGFloat
     let height: CGFloat
     let cornerRadius: CGFloat
     let color: Color?
     let foregroundColor: Color
-    let borderDistance: CGFloat
-
+    let action_status: () -> Void
     var body: some View {
-        Button(action: {
-            print("\(action_status)")
-        }) {
+        Button(action: action_status) {
             if let label , let icon {
                 Label(label, systemImage: icon).imageScale(.large).foregroundStyle(.white)
             } else if let icon {
@@ -30,7 +26,7 @@ struct CreateButton: View {
                 Text(label).foregroundStyle(.white)
             }
         }
-        .padding(borderDistance)
+        .padding(30)
         .frame(maxWidth: widht,maxHeight: height)
         .background(color)
         .cornerRadius(cornerRadius)
@@ -39,5 +35,7 @@ struct CreateButton: View {
 }
 
 #Preview {
-    CreateButton(label: nil, icon: "play", action_status: "Entrando...", widht: 100, height: 100, cornerRadius: 300, color: .corBotao, foregroundColor: .corBackground, borderDistance: 20)
+    CreateButton(label: nil, icon: "play", widht: 100, height: 100, cornerRadius: 50, color: .corBotao, foregroundColor: .white, action_status: {
+        print("play")
+    })
 }
