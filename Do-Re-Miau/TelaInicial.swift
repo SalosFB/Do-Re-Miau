@@ -1,5 +1,5 @@
 //
-//  TelaInicial.swift
+//  Inicial.swift
 //  Do-Re-Miau
 //
 //  Created by User on 05/12/25.
@@ -17,13 +17,22 @@ struct ContentView: View {
                     
                     VStack {
                         HStack {
-                            CreateTopButton(label: "Ajuda", icon: "questionmark", action_status: "Ajudando...")
+                            VStack{
+                                CreateButton(label: nil, icon: "questionmark", widht: 100, height: 100, cornerRadius: 50, color: .corBotao, foregroundColor: .white, action_status:{ print("Ajudando...")})
+                                Text("Ajuda").fontWeight(.bold).foregroundStyle(.corBotao).padding(.top,4)
+                                
+                            }
                             
                             Spacer()
                             
-                            CreateTopButton(label: "Menu", icon: "line.3.horizontal", action_status: "Menuzando...")
+                            VStack{
+                                CreateButton(label: nil, icon: "line.3.horizontal", widht: 100, height: 100, cornerRadius: 50, color: .corBotao, foregroundColor: .white, action_status:{ print("Ajudando...")})
+                                Text("Menu").fontWeight(.bold).foregroundStyle(.corBotao).padding(.top,4)
+                                
+                            }
+//                            CreateTopButton(label: "Menu", icon: "line.3.horizontal", action_status: {print("Menuzando...")})
                         }
-//                        .background(.red)
+                        .padding(.horizontal, 20)
                         
                         Spacer()
                         
@@ -33,15 +42,32 @@ struct ContentView: View {
                             .shadow(color: .gray, radius: 1, x: 0, y: 2)
                         
                         VStack {
-                            CreateButton(label: "Jogar", icon: "play.fill", action_status: "Entrando...")
-                            CreateButton(label: "Opções", icon: "line.3.horizontal", action_status: "Abrindo o menu de opções...")
-                            CreateButton(label: "Sair", icon: "xmark", action_status: "Saindo...")
+                            CreateButton(label: "Jogar", icon: "play.fill", widht: 200, height: 50, cornerRadius: 15, color: .corBotao, foregroundColor: .white, action_status: {
+                                
+                                print("Entrando...")
+                                
+                            })
+                            
+                            CreateButton(label: "Opções", icon: "line.3.horizontal", widht: 200, height: 50, cornerRadius: 15, color: .corBotao, foregroundColor: .white, action_status: {
+                                
+                                print("Abrindo o menu de opções...")
+                                
+                            })
+                            
+                            CreateButton(label: "Sair", icon: "xmark", widht: 200, height: 50, cornerRadius: 15, color: .corBotao, foregroundColor: .white, action_status: {
+                                
+                                print("Saindo...")
+                                
+                            })
+
+//                            CreateButton(label: "Jogar", icon: "play.fill", action_status: "Entrando...")
+//                            CreateButton(label: "Opções", icon: "line.3.horizontal", action_status: "Abrindo o menu de opções...")
+//                            CreateButton(label: "Sair", icon: "xmark", action_status: "Saindo...")
                         }
-                        .padding(.bottom,30)
+                        .padding(.bottom,60)
                         
                     }
                     .padding()
-//                    .background()
                 }
                 
             }

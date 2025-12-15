@@ -10,11 +10,11 @@ import SwiftUI
 struct CreateTopButton: View {
     let label: String
     let icon: String
-    let action_status: String
+    let action_status: () -> Void
     
     var body: some View {
         Button {
-            print("\(action_status)")
+            action_status()
         }label:{
             VStack {
                 ZStack {
@@ -29,11 +29,14 @@ struct CreateTopButton: View {
                 .frame(width: 100, height: 100)
                 
                 Text("\(label)")
+                .fontWeight(.bold)
+                .foregroundStyle(.corBotao)
+                .padding(.top, 4)
             }
         }
     }
 }
 
 #Preview {
-    CreateTopButton(label: "Play", icon: "play", action_status: "Jogando")
+    CreateTopButton(label: "Play", icon: "play", action_status: {print("Jogando")})
 }
