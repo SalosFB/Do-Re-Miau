@@ -9,11 +9,9 @@ import SwiftUI
 
 struct ScrollViewMusicNote: View {
 
-    let imageNames = ["notaSemibreve", "notaMinima", "notaSemiminima", "notaColcheia", "notaSemicolcheia", "notaSemifusa", "notaFusa", "notaSemibreve", "notaMinima", "notaSemiminima", "notaColcheia", "notaSemicolcheia", "notaSemifusa", "notaFusa"]
+    let imageNames = ["notaSemibreve", "notaMinima", "notaSemiminima", "notaColcheia", "notaSemicolcheia", "notaSemifusa", "notaFusa"]
 
     var body: some View {
-        ZStack {
-            Color.blue
             ZStack {
                 VStack {
                     ScrollView(.horizontal) {
@@ -23,24 +21,22 @@ struct ScrollViewMusicNote: View {
                             }
                         }
                         .padding(.horizontal, 280)
-                        .padding(.vertical, 50)
-                    }.contentMargins(.bottom, 200, for: .scrollIndicators)
+                        .padding(.vertical, 5)
+                    }.contentMargins(.bottom, 116, for: .scrollIndicators)
 
                     HStack {
-                        Spacer()
-                        Text("Botao")
-                        Text("Botao")
+                        CreateMusicButton(label: "Voltar", icon: "backward.fill", action_status: "Voltar")
+                        CreateMusicButton(label: "Pausar", icon: "pause.circle", action_status: "Pausado")
+                        CreateMusicButton(label: "Próximo", icon: "forward.fill", action_status: "Próximo")
                     }
-                    .padding(.top, 100)
                     .padding(.horizontal, 200)
+                    .padding(.bottom, 5)
                 }
             }
-            .frame(height: 350)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 200))
+            .frame(maxHeight: 200)
+            .background(Color.corPrimaryWhite)
+            .clipShape(RoundedRectangle(cornerRadius: 100))
             .padding(85)
-
-        }
     }
 }
 
