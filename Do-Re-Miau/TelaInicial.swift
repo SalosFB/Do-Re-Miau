@@ -17,6 +17,14 @@ struct ContentView: View {
                     
                     VStack {
                         HStack {
+<<<<<<< HEAD
+                            CreateTopButton(label: "Ajuda", icon: "questionmark", action_status: "Ajudando...")
+                            
+                            
+                            Spacer()
+                            
+                            CreateTopButton(label: "Menu", icon: "line.3.horizontal", action_status: "Menuzando...")
+=======
                             VStack{
                                 CreateButton(label: nil, icon: "questionmark", widht: 100, height: 100, cornerRadius: 50, color: .corBotao, foregroundColor: .white, action_status:{ print("Ajudando...")})
                                 Text("Ajuda").fontWeight(.bold).foregroundStyle(.corBotao).padding(.top,4)
@@ -31,6 +39,7 @@ struct ContentView: View {
                                 
                             }
 //                            CreateTopButton(label: "Menu", icon: "line.3.horizontal", action_status: {print("Menuzando...")})
+>>>>>>> origin/Feature/buttons-and-home-view
                         }
                         .padding(.horizontal, 20)
                         
@@ -42,6 +51,11 @@ struct ContentView: View {
                             .shadow(color: .gray, radius: 1, x: 0, y: 2)
                         
                         VStack {
+<<<<<<< HEAD
+                            CreateButton(label: "Jogar", icon: "play.fill", action_status: "Entrando...")
+                            CreateButton(label: "Opções", icon: "line.3.horizontal", action_status: "Abrindo o menu de opções...")
+                            CreateButton(label: "Sair", icon: "xmark", action_status: "Saindo...")
+=======
                             CreateButton(label: "Jogar", icon: "play.fill", widht: 200, height: 50, cornerRadius: 15, color: .corBotao, foregroundColor: .white, action_status: {
                                 
                                 print("Entrando...")
@@ -63,6 +77,7 @@ struct ContentView: View {
 //                            CreateButton(label: "Jogar", icon: "play.fill", action_status: "Entrando...")
 //                            CreateButton(label: "Opções", icon: "line.3.horizontal", action_status: "Abrindo o menu de opções...")
 //                            CreateButton(label: "Sair", icon: "xmark", action_status: "Saindo...")
+>>>>>>> origin/Feature/buttons-and-home-view
                         }
                         .padding(.bottom,60)
                         
