@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		CE3983232EE36885007BDC82 /* SwiftUIExtras in Frameworks */ = {isa = PBXBuildFile; productRef = CE3983222EE36885007BDC82 /* SwiftUIExtras */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		CE3983102EE352AC007BDC82 /* Do-Re-Miau.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Do-Re-Miau.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -27,7 +23,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE3983232EE36885007BDC82 /* SwiftUIExtras in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +65,6 @@
 			);
 			name = "Do-Re-Miau";
 			packageProductDependencies = (
-				CE3983222EE36885007BDC82 /* SwiftUIExtras */,
 			);
 			productName = "Do-Re-Miau";
 			productReference = CE3983102EE352AC007BDC82 /* Do-Re-Miau.app */;
@@ -100,9 +94,6 @@
 			);
 			mainGroup = CE3983072EE352AC007BDC82;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				CE3983212EE36885007BDC82 /* XCRemoteSwiftPackageReference "SwiftUIExtras" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CE3983112EE352AC007BDC82 /* Products */;
 			projectDirPath = "";
@@ -331,25 +322,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CE3983212EE36885007BDC82 /* XCRemoteSwiftPackageReference "SwiftUIExtras" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mateusrodriguesxyz/SwiftUIExtras";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CE3983222EE36885007BDC82 /* SwiftUIExtras */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE3983212EE36885007BDC82 /* XCRemoteSwiftPackageReference "SwiftUIExtras" */;
-			productName = SwiftUIExtras;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE3983082EE352AC007BDC82 /* Project object */;
 }
