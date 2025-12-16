@@ -51,8 +51,7 @@ struct PopupScreen: View {
                     }
                     
                     VStack {
-                        CreateButton(label: "Desafios", icon: "play", action_status: "Play...")
-                        CreateButton(label: "Espaço Livre", icon: "play", action_status: "Espaço Livre...")
+                        
                     }
                         
                 }
