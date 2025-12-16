@@ -21,8 +21,13 @@ struct CreateButton: View {
             if let label , let icon {
                 Label(label, systemImage: icon).imageScale(.large).foregroundStyle(.white)
             } else if let icon {
-                Image(systemName: icon).resizable().scaledToFit().foregroundStyle(.white)
-            } else if let label{
+                if UIImage(systemName: icon) != nil{
+                    Image(systemName: icon).resizable().scaledToFit().foregroundStyle(.white)
+                } else {
+                    Image(icon).resizable().scaledToFit().foregroundStyle(.white)
+                }
+                
+            }  else if let label{
                 Text(label).foregroundStyle(.white)
             }
         }
