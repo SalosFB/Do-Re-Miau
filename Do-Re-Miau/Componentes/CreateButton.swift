@@ -19,12 +19,12 @@ struct CreateButton: View {
     var body: some View {
         Button(action: action_status) {
             if let label , let icon {
-                Label(label, systemImage: icon).imageScale(.large).foregroundStyle(.white)
+                Label(label, systemImage: icon).imageScale(.large).foregroundStyle(foregroundColor)
             } else if let icon {
                 if UIImage(systemName: icon) != nil{
-                    Image(systemName: icon).resizable().scaledToFit().foregroundStyle(.white)
+                    Image(systemName: icon).resizable().scaledToFit().foregroundStyle(foregroundColor)
                 } else {
-                    Image(icon).resizable().scaledToFit().foregroundStyle(.white)
+                    Image(icon).foregroundStyle(foregroundColor)
                 }
                 
             }  else if let label{
@@ -40,7 +40,7 @@ struct CreateButton: View {
 }
 
 #Preview {
-    CreateButton(label: nil, icon: "play", widht: 100, height: 100, cornerRadius: 50, color: .corBotao, foregroundColor: .white, action_status: {
+    CreateButton(label: "play", icon: "play", widht: 200, height: 50, cornerRadius: 50, color: .corBotao, foregroundColor: .white, action_status: {
         print("play")
     })
 }
