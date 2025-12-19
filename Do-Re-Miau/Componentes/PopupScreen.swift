@@ -5,16 +5,25 @@
 //  Created by found on 12/12/25.
 //
 
+// 19/12/2025: Descicão do programa em: PopupScreen.swift
+    
+
 import SwiftUI
+
+// Corpo da view pop-up
 
 struct PopupScreen: View {
     
     var body: some View {
         NavigationStack {
+            
+            // Design do pop-up
+            
             ZStack {
                 RoundedRectangle(cornerRadius: 24)
                     .fill(.corBackground)
                     .stroke(.corBotao, lineWidth: 6)
+                    .shadow(color: .gray, radius: 3, x: 0, y: 5)
                 
                 VStack {
                     ZStack {
@@ -24,35 +33,22 @@ struct PopupScreen: View {
                         )
                         .fill(.corBotao)
                         .frame(width: 500, height: 100)
-                        HStack {
+                        .shadow(color: .black, radius: 6, x: 0, y: 5)
+                        
                             Text("Selecione o Modo de Jogo:")
                                 .foregroundStyle(Color.white)
                                 .fontWeight(.bold)
                                 .font(.title)
-                            
-                            Button {
-                            
-                            } label: {
-                                VStack {
-                                    ZStack {
-                                        Circle()
-                                            .fill(.red)
-                                        Image(systemName: "xmark")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .foregroundStyle(.corBackground)
-                                            .padding(15)
-                                            .padding(.leading, 5)
-                                    }
-                                    .frame(width: 60, height: 60)
-                                }
-                            }
-                        }
                     }
                     
                     VStack {
+                        CreateButton(label: "Níveis", icon: nil, widht: 300, height: 50, cornerRadius: 10, color: .corBotao, foregroundColor: .white, textSize: 30, imageSize: 0.5, action_status: {})
                         
+                            .padding(.bottom)
+                        
+                        CreateButton(label: "Espaço Livre", icon: nil, widht: 300, height: 50, cornerRadius: 10, color: .corBotao, foregroundColor: .white, textSize: 30, imageSize: 0.3, action_status: {})
                     }
+                    .padding()
                         
                 }
                 .padding(.bottom, 40)

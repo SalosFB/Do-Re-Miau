@@ -1,44 +1,27 @@
 //
-//  CreateButton.swift
+//  CreateNavigationButton.swift
 //  Do-Re-Miau
 //
-//  Created by found on 05/12/25.
+//  Created by found on 19/12/25.
 //
+
+// =========================================================
+
+// 19/12/2025: Descicão do programa em: CreateNavigationButton.swift
+    
+    // Criacão dos atrbutos do botão tipo Navigation Link, para navegacão entre telas
 
 import SwiftUI
 
-struct CreateButton: View {
+struct CreateNavigationButton<Destination: View>: View { // definindo que a View redirecionará para outra View
     
-//    let label: String
-//    let icon: String
-//    let action_status: String
-//    
-//    var body: some View {
-//        Button(action: {
-//            print("\(action_status)")
-//        }) {
-//            Label(label, systemImage: icon).imageScale(.large).foregroundStyle(.white)
-//        }
-//        .padding()
-//        .frame(width: 200)
-//        .background(Color.corBotao)
-//        .cornerRadius(15)
-//        .shadow(color: .gray, radius: 1, x: 0, y: 2)
-//    }
-//}
-//#Preview {
-//    CreateButton(label: "Play", icon: "play", action_status: "Entrando...")
-
-//  =======================================================
+    // Criação de atributos, semelhantes aos do botão, com a adição do atributo 'destination'
     
-// 19/12/2025: Descicão do programa em: CreateButton.swift
-    
-    // Criacão dos atrbutos do botão
-    
+    let destination: Destination // -> Atributo para a View de destino
     let label: String?
     let icon: String?
-    @State var widht: CGFloat
-    @State var height: CGFloat
+    let widht: CGFloat
+    let height: CGFloat
     let cornerRadius: CGFloat
     let color: Color?
     let foregroundColor: Color
@@ -46,11 +29,12 @@ struct CreateButton: View {
     let imageSize: CGFloat
     let action_status: () -> Void
 
-    // Corpo da view, com a definição do design do botão
+    // Corpo do botão de navegação
     
     var body: some View {
         
-        Button(action: action_status) {
+        
+        NavigationLink(destination: destination) {
             
             // Forma do botão
             
@@ -62,7 +46,7 @@ struct CreateButton: View {
                     .cornerRadius(cornerRadius)
                     .shadow(color: .gray, radius: 1, x: 0, y: 2)
                 
-                // Conteúdo do botão dividido em if clauses, permitindo que o usuário possa editar nomes e/ou imagens Swift
+                // Conteúdo do botão de navegação dividido em if clauses, permitindo que o usuário possa editar nomes e/ou imagens Swift
                 
                 if let label , let icon {
                     
@@ -83,8 +67,7 @@ struct CreateButton: View {
                         
                     } else {
                         
-                        Image(icon)
-                            .foregroundStyle(.white)
+                        Image(icon).foregroundStyle(.white)
                     }
                     
                 }  else if let label{
@@ -95,8 +78,6 @@ struct CreateButton: View {
                 }
             }
         }
-        .frame(width: widht, height: height)
-        
         
     }
 }
@@ -104,7 +85,8 @@ struct CreateButton: View {
 // Visualização do botão
 
 #Preview {
-    CreateButton(
+    CreateNavigationButton(
+        destination: PopupScreen(),
         label: "play",
         icon: "play.fill",
         widht: 300,
@@ -115,6 +97,6 @@ struct CreateButton: View {
         textSize: 60,
         imageSize: 0.7,
         action_status: {
-        
+            print("Entrando em uma nova tela...")
     })
 }
