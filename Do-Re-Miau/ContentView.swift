@@ -1,24 +1,13 @@
-//
-//  ContentView.swift
-//  Do-Re-Miau
-//
-//  Created by User on 05/12/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        ZStack {
+            Color.corDeFundo
+            ScoreMusicView()
+        }.ignoresSafeArea(.all)
     }
 }
-
 #Preview {
     ContentView()
 }
