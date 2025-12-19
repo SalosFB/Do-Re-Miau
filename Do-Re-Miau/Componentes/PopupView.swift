@@ -5,14 +5,14 @@
 //  Created by found on 12/12/25.
 //
 
-// 19/12/2025: Descicão do programa em: PopupScreen.swift
+// 19/12/2025: Descicão do programa em: PopupView.swift
     
 
 import SwiftUI
 
 // Corpo da view pop-up
 
-struct PopupScreen: View {
+struct PopupView: View {
     
     var body: some View {
         NavigationStack {
@@ -61,5 +61,5 @@ struct PopupScreen: View {
 }
 
 #Preview {
-    PopupScreen()
+    PopupView()
 }

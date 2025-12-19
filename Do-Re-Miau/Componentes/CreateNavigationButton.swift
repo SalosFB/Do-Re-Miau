@@ -86,7 +86,7 @@ struct CreateNavigationButton<Destination: View>: View { // definindo que a View
 
 #Preview {
     CreateNavigationButton(
-        destination: PopupScreen(),
+        destination: PopupView(),
         label: "play",
         icon: "play.fill",
         widht: 300,

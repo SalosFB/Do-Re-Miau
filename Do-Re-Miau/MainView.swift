@@ -1,5 +1,5 @@
 //
-//  Inicial.swift
+//  MainView.swift
 //  Do-Re-Miau
 //
 //  Created by User on 05/12/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TelaInicial: View {
+struct MainView: View {
         var body: some View {
             NavigationStack {
                 
@@ -52,7 +52,7 @@ struct TelaInicial: View {
 
                                 CreateButton(
                                     label: nil,
-                                    icon: "line.3.horizontal",
+                                    icon: "square.and.arrow.up",
                                     widht: 100,
                                     height: 100,
                                     cornerRadius: 50,
@@ -62,7 +62,7 @@ struct TelaInicial: View {
                                     imageSize: 0.5,
                                     action_status: {print("Valeu...")})
                             
-                            Text("Menu")
+                            Text("Compartilhar")
                                 .fontWeight(.bold)
                                 .foregroundStyle(.corBotao)
                                 .padding(.top,4)
@@ -86,7 +86,7 @@ struct TelaInicial: View {
                         VStack {
                             
                             CreateNavigationButton(
-                                destination: PopupScreen(),
+                                destination: PopupView(),
                                 label: "Jogar",
                                 icon: "play.fill",
                                 widht: 500,
@@ -147,5 +147,5 @@ struct TelaInicial: View {
         }
     }
 #Preview {
-    TelaInicial()
+    MainView()
 }
