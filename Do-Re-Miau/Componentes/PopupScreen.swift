@@ -41,6 +41,8 @@ struct PopupScreen: View {
                                 .font(.title)
                     }
                     
+                    // Criação de botões do pop-up
+                    
                     VStack {
                         CreateButton(label: "Níveis", icon: nil, widht: 300, height: 50, cornerRadius: 10, color: .corBotao, foregroundColor: .white, textSize: 30, imageSize: 0.5, action_status: {})
                         

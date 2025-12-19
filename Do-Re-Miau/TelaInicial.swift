@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TelaInicial: View {
         var body: some View {
             NavigationStack {
                 
@@ -25,7 +25,17 @@ struct ContentView: View {
 //                            CreateTopButton(label: "Menu", icon: "line.3.horizontal", action_status: "Menuzando...")
 
                             VStack{
-                                CreateButton(label: nil, icon: "questionmark", widht: 100, height: 100, cornerRadius: 50, color: .corBotao, foregroundColor: .white, textSize: 20, imageSize: 0.5, action_status:{
+                                CreateButton(
+                                    label: nil,
+                                    icon: "questionmark",
+                                    widht: 100,
+                                    height: 100,
+                                    cornerRadius: 50,
+                                    color: .corBotao,
+                                    foregroundColor: .white,
+                                    textSize: 20,
+                                    imageSize: 0.5,
+                                    action_status:{
                                     
                                     print("Ajudando...")})
                                 
@@ -40,12 +50,22 @@ struct ContentView: View {
                             
                             VStack{
 
-                                CreateButton(label: nil, icon: "line.3.horizontal", widht: 100, height: 100, cornerRadius: 50, color: .corBotao, foregroundColor: .white, textSize: 20, imageSize: 0.5, action_status: {print("Valeu...")})
-                                
-                                Text("Menu")
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(.corBotao)
-                                    .padding(.top,4)
+                                CreateButton(
+                                    label: nil,
+                                    icon: "line.3.horizontal",
+                                    widht: 100,
+                                    height: 100,
+                                    cornerRadius: 50,
+                                    color: .corBotao,
+                                    foregroundColor: .white,
+                                    textSize: 20,
+                                    imageSize: 0.5,
+                                    action_status: {print("Valeu...")})
+                            
+                            Text("Menu")
+                                .fontWeight(.bold)
+                                .foregroundStyle(.corBotao)
+                                .padding(.top,4)
                                 
                             }
 //                            CreateTopButton(label: "Menu", icon: "line.3.horizontal", action_status: {print("Menuzando...")})
@@ -65,23 +85,49 @@ struct ContentView: View {
                         
                         VStack {
                             
-                            CreateNavigationButton(destination: PopupScreen(), label: "Jogar", icon: "play.fill", widht: 500, height: 50, cornerRadius: 15, color: .corBotao, foregroundColor: .white, textSize: 20, imageSize: 1.0, action_status: {
+                            CreateNavigationButton(
+                                destination: PopupScreen(),
+                                label: "Jogar",
+                                icon: "play.fill",
+                                widht: 500,
+                                height: 50,
+                                cornerRadius: 15,
+                                color: .corBotao,
+                                foregroundColor: .white,
+                                textSize: 20,
+                                imageSize: 1.0,
+                                action_status: {
                                 
                                 
                             })
                             
+                            CreateButton(
+                                label: "Opções",
+                                icon: "line.3.horizontal",
+                                widht: 500,
+                                height: 50,
+                                cornerRadius: 15,
+                                color: .corBotao,
+                                foregroundColor: .white,
+                                textSize: 20,
+                                imageSize: 1.0,
+                                action_status: {
+                                
+                                print("Menuzando...")
+                                
+                            })
                             
-                            NavigationLink {
-                                PopupScreen()
-                            } label: {
-                                CreateButton(label: "Opções", icon: "line.3.horizontal", widht: 500, height: 50, cornerRadius: 15, color: .corBotao, foregroundColor: .white, textSize: 20, imageSize: 1.0, action_status: {
-                                    
-                                    print("Menuzando...")
-                                    
-                                })
-                            }
-                            
-                            CreateButton(label: "Sair", icon: "xmark", widht: 500, height: 50, cornerRadius: 15, color: .corBotao, foregroundColor: .white, textSize: 20, imageSize: 1.0, action_status: {
+                            CreateButton(
+                                label: "Sair",
+                                icon: "xmark",
+                                widht: 500,
+                                height: 50,
+                                cornerRadius: 15,
+                                color: .corBotao,
+                                foregroundColor: .white,
+                                textSize: 20,
+                                imageSize: 1.0,
+                                action_status: {
                                 
                                 print("Saindo...")
                                 
@@ -101,5 +147,5 @@ struct ContentView: View {
         }
     }
 #Preview {
-    ContentView()
+    TelaInicial()
 }
