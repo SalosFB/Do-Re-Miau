@@ -11,7 +11,7 @@ import SwiftUI
 struct Do_Re_MiauApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ScrollViewMusicNote()
         }
     }
 }
