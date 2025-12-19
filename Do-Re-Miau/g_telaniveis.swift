@@ -59,8 +59,43 @@ struct GView: View {
             .padding(.top, 306)
             .padding(.leading, 80)
             
+            //botão
+            HStack(spacing:20){
+                ForEach(0..<2, id: \.self){ _  in
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(Color.roxin)
+                        .frame(width: 70, height: 280)
+                }
+            }
+            .padding(.top, 223)
+            .padding(.trailing, 770)
             
+            HStack(spacing:20){
+                ForEach(0..<3, id: \.self){ _  in
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(Color.roxin)
+                        .frame(width: 70, height: 280)
+                }
+            }
+            .padding(.top, 223)
+            .padding(.trailing, 108)
             
+            HStack(spacing:20){
+                ForEach(0..<2, id: \.self){ _  in
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(Color.roxin)
+                        .frame(width: 70, height: 280)
+                }
+            }
+            .padding(.top, 223)
+            .padding(.leading, 540)
+            
+            RoundedRectangle(cornerRadius: 3)
+                .fill(Color.roxin)
+                .frame(width: 70, height: 280)
+            
+                .padding(.top, 223)
+                .padding(.leading, 1008)
             }
         
        
