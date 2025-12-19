@@ -29,7 +29,8 @@ struct Partitura: View {
                         .foregroundStyle(Color.corPrimariaPartitura)
                 }
             }
-        }.frame(width: 1000, height: 205)
+        }
+        .frame(width: 1000, height: 205)
     }
 }
 
