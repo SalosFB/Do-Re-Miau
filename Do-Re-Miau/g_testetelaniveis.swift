@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct g_testetel: View {
-    var body: some View {
-        
-        ZStack{
-            Color("fundo_niveis").ignoresSafeArea()
-        }
+    var body: some View {        
+        ZStack {
+            Color.corDeFundo
+            TelaDeJogo1()
+        }.ignoresSafeArea(.all)
     }
 }
-            
-            
-        #Preview("g_testetel") {
-                ContentView()
-            }
+
+#Preview {
+    ContentView()
+}
