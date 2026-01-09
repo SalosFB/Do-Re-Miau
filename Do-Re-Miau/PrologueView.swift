@@ -13,7 +13,7 @@ import SwiftUI
 //  Created by User on 07/01/26.
 //
 
-import SwiftUI
+
 //adicionar cores dos assets depois
 struct Cena {
     let label: String
@@ -51,9 +51,10 @@ struct PrologueView: View {
     }
     var body: some View {
         ZStack {
-            Color.blue.ignoresSafeArea()
+            Color.corBackground.ignoresSafeArea()
             VStack {
                 HStack {
+                    //imagens da explicacao no 'quadro'
                     ZStack {
                         Color.white.ignoresSafeArea()
                         Image(listaCenas[indiceAtual].imageQuadro)
@@ -69,16 +70,17 @@ struct PrologueView: View {
                 Spacer()
             }.padding(.bottom, 250).padding(.horizontal, 20)
 
-            //balao de fala em baixo pelo spacer
             VStack {
                 Spacer()
+                //Botao de pular/reiniciar
                 ZStack {
                     Color.white.ignoresSafeArea()
                     VStack{
                         HStack {
                             ZStack {
-                                Color.blue.ignoresSafeArea()
-                                Text("Nome")
+                                Color.corBotao.ignoresSafeArea()
+                                Text("Miriam")
+                                    .font(.system(size: 20))
                                     .foregroundStyle(Color.white)
                             }.clipShape(RoundedRectangle(cornerRadius: 40))
                                 .frame(width: 100, height: 35) //width está fixo
@@ -89,18 +91,9 @@ struct PrologueView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            Button(action: {
-                                proximaCena()
-                            }) {
-                                ZStack {
-                                    Color.blue.ignoresSafeArea()
-                                    Text((self.indiceAtual < self.listaCenas.count - 1) ? "Pular" : "Reiniciar")
-                                        .foregroundStyle(Color.white)
-                                }.clipShape(RoundedRectangle(cornerRadius: 40))
-                                    .frame(width: 100, height: 35) //width está fixo
-                            }
-                        } .padding(20)
+                            CreateButton(label: (self.indiceAtual < self.listaCenas.count - 1) ? "Pular" : "Reiniciar", icon: "", widht: 100, height: 35, cornerRadius: 40, color: Color.corBotao, foregroundColor: Color.white, textSize: 20, imageSize: 0, action_status: proximaCena)
 
+                        } .padding(20)
                     }
                 }
                 .frame(height: 200)
