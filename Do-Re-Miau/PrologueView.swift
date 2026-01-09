@@ -66,6 +66,10 @@ struct PrologueView: View {
                         .scaleEffect(escalaPersonagem)
                         .animation(.spring(response: 0.3, dampingFraction: 0.5), value: escalaPersonagem)
                     ) //personagem provisorio
+                    VStack {
+                        CreateNavigationButton(destination: MainView(), label: "", icon: "checkmark", widht: 80, height: 80, cornerRadius: 50, color: Color.corBotao, foregroundColor: Color.white, textSize: 20, imageSize: 1.0, action_status: {print("Indo para o menu..")}).padding(.top, 250)
+                        Spacer()
+                    }
                 }
                 Spacer()
             }.padding(.bottom, 250).padding(.horizontal, 20)
