@@ -47,11 +47,12 @@ struct TelaDeJogo1: View {
                 }
                 .padding()
 
-                
-                RoundedRectangle(cornerRadius: 40)
-                    .fill(.white)
-                    .frame(maxHeight: 620)
-                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 40)
+                        .fill(.white)
+                        .frame(maxHeight: 620)
+                    Partitura()
+                }
                 RoundedRectangle(cornerRadius: 100)
                     .fill(.white)
                     .frame(maxHeight: 201)
