@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ScrollViewMusicNote: View {
 
-    let imageNames = ["notaSemibreve", "notaMinima", "notaSemiminima", "notaColcheia", "notaSemicolcheia", "notaSemifusa", "notaFusa"]
+    let imageNames = ["nota_Semibreve", "nota_Minima", "nota_Seminima", "nota_Colcheia", "nota_Semicolcheia", "nota_Semifusa", "nota_Fusa"]
 
     var body: some View {
             ZStack {
                 VStack {
                     ScrollView(.horizontal) {
-                        HStack(alignment: .center, spacing: 30) {
+                        HStack(alignment: .center, spacing: 10) {
                             ForEach(imageNames, id: \.self) {imageName in
                                 Image(imageName)
+                                    .scaleEffect(0.6)
                             }
                         }
                         .padding(.horizontal, 280)
@@ -25,17 +26,61 @@ struct ScrollViewMusicNote: View {
                     }.contentMargins(.bottom, 116, for: .scrollIndicators)
 
                     HStack {
-                        CreateMusicButton(label: "Voltar", icon: "backward.fill", action_status: "Voltar")
-                        CreateMusicButton(label: "Pausar", icon: "pause.circle", action_status: "Pausado")
-                        CreateMusicButton(label: "Próximo", icon: "forward.fill", action_status: "Próximo")
+                        CreateNavigationButton(
+                            destination: PopupView(),
+                            label: "Voltar",
+                            icon: "backward.fill",
+                            widht: 150,
+                            height: 50,
+                            cornerRadius: 25,
+                            color: .corBackground,
+                            foregroundColor: .corBotao,
+                            textSize: 20,
+                            imageSize: 1.0,
+                            action_status: {
+                            
+                            
+                        })
+                        
+                        CreateNavigationButton(
+                            destination: PopupView(),
+                            label: "Pausar",
+                            icon: "pause.circle.fill",
+                            widht: 150,
+                            height: 50,
+                            cornerRadius: 25,
+                            color: .corBackground,
+                            foregroundColor: .corBotao,
+                            textSize: 20,
+                            imageSize: 1.0,
+                            action_status: {
+                            
+                            
+                        })
+                        
+                        CreateNavigationButton(
+                            destination: PopupView(),
+                            label: "Próximo",
+                            icon: "forward.fill",
+                            widht: 150,
+                            height: 50,
+                            cornerRadius: 25,
+                            color: .corBackground,
+                            foregroundColor: .corBotao,
+                            textSize: 20,
+                            imageSize: 1.0,
+                            action_status: {
+                            
+                            
+                        })
                     }
                     .padding(.horizontal, 200)
                     .padding(.bottom, 5)
                 }
             }
-            .frame(maxHeight: 200)
+            .frame(maxHeight: 250)
             .background(Color.corPrimaryWhite)
-            .clipShape(RoundedRectangle(cornerRadius: 100))
+            .clipShape(RoundedRectangle(cornerRadius: 125))
             .padding(85)
     }
 }

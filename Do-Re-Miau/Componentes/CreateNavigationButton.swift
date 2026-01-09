@@ -40,11 +40,19 @@ struct CreateNavigationButton<Destination: View>: View { // definindo que a View
             
             ZStack{
                 
-                Rectangle()
-                    .fill(Color(color ?? Color.corBotao))
-                    .frame(width: widht, height: height)
-                    .cornerRadius(cornerRadius)
-                    .shadow(color: .gray, radius: 1, x: 0, y: 2)
+                if let color {
+                    Rectangle()
+                        .fill(Color(color))
+                        .frame(width: widht, height: height)
+                        .cornerRadius(cornerRadius)
+                        .shadow(color: .gray, radius: 1, x: 0, y: 2)
+                } else {
+                    Rectangle()
+                        .opacity(0)
+                        .frame(width: widht, height: height)
+                        .cornerRadius(cornerRadius)
+                        .shadow(color: .gray, radius: 1, x: 0, y: 2)
+                }
                 
                 // Conteúdo do botão de navegação dividido em if clauses, permitindo que o usuário possa editar nomes e/ou imagens Swift
                 
@@ -52,7 +60,7 @@ struct CreateNavigationButton<Destination: View>: View { // definindo que a View
                     
                     Label(label, systemImage: icon)
                         .imageScale(.large)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(foregroundColor)
                         .font(.system(size: textSize))
                         .lineLimit(1)
                     
@@ -62,12 +70,12 @@ struct CreateNavigationButton<Destination: View>: View { // definindo que a View
                         Image(systemName: icon)
                             .resizable()
                             .scaledToFit()
-                            .foregroundStyle(.white)
+                            .foregroundStyle(foregroundColor)
                             .scaleEffect(imageSize)
                         
                     } else {
                         
-                        Image(icon).foregroundStyle(.white)
+                        Image(icon).foregroundStyle(foregroundColor)
                     }
                     
                 }  else if let label{
@@ -87,13 +95,13 @@ struct CreateNavigationButton<Destination: View>: View { // definindo que a View
 #Preview {
     CreateNavigationButton(
         destination: PopupView(),
-        label: "play",
+        label: nil,
         icon: "play.fill",
         widht: 300,
         height: 300,
         cornerRadius: 50,
-        color: .corBotao,
-        foregroundColor: .white,
+        color: nil,
+        foregroundColor: .black,
         textSize: 60,
         imageSize: 0.7,
         action_status: {

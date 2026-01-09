@@ -43,7 +43,7 @@ struct CreateButton: View {
     let color: Color?
     let foregroundColor: Color
     let textSize: CGFloat
-    let imageSize: CGFloat
+    let imageSize: Double
     let action_status: () -> Void
 
     // Corpo da view, com a definição do design do botão
@@ -56,40 +56,50 @@ struct CreateButton: View {
             
             ZStack{
                 
-                Rectangle()
-                    .fill(Color(color ?? Color.corBotao))
-                    .frame(width: widht, height: height)
-                    .cornerRadius(cornerRadius)
-                    .shadow(color: .gray, radius: 1, x: 0, y: 2)
+                if let color {
+                    Rectangle()
+                        .fill(Color(color))
+                        .frame(width: widht, height: height)
+                        .cornerRadius(cornerRadius)
+                        .shadow(color: .gray, radius: 1, x: 0, y: 2)
+                }
                 
+                else {
+                    Rectangle()
+                        .opacity(0)
+                        .frame(width: widht, height: height)
+                        .cornerRadius(cornerRadius)
+                        .shadow(color: .gray, radius: 1, x: 0, y: 2)
+                }
                 // Conteúdo do botão dividido em if clauses, permitindo que o usuário possa editar nomes e/ou imagens Swift
                 
                 if let label , let icon {
-                    
                     Label(label, systemImage: icon)
-                        .imageScale(.large)
-                        .foregroundStyle(.white)
+                        .scaledToFit()
+                        .foregroundStyle(foregroundColor)
                         .font(.system(size: textSize))
                         .lineLimit(1)
+                        
                     
                 } else if let icon {
                     
                     if UIImage(systemName: icon) != nil {
                         Image(systemName: icon)
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(.white)
                             .scaleEffect(imageSize)
+                            .scaledToFit()
+                            .foregroundStyle(foregroundColor)
+                            
                         
                     } else {
                         
                         Image(icon)
                             .foregroundStyle(.white)
+                            .scaleEffect(imageSize)
                     }
                     
                 }  else if let label{
                     Text(label)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(foregroundColor)
                         .font(.system(size: textSize))
                         .lineLimit(1)
                 }
@@ -110,10 +120,10 @@ struct CreateButton: View {
         widht: 300,
         height: 300,
         cornerRadius: 50,
-        color: .corBotao,
-        foregroundColor: .white,
+        color: nil,
+        foregroundColor: .black,
         textSize: 60,
-        imageSize: 0.7,
+        imageSize: 1,
         action_status: {
         
     })
