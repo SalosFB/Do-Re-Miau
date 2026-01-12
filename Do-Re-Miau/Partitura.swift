@@ -32,8 +32,8 @@ struct Partitura: View {
         }
         .frame(width: 1000, height: 205)
     }
+    
 }
-
 
 #Preview {
     Partitura()
