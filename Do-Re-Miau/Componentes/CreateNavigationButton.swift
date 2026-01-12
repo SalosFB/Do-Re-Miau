@@ -8,8 +8,8 @@
 // =========================================================
 
 // 19/12/2025: Descicão do programa em: CreateNavigationButton.swift
-    
 // Criacão dos atrbutos do botão tipo Navigation Link, para navegacão entre telas
+    // Criacão dos atrbutos do botão tipo Navigation Link, para navegacão entre telas
 
 import SwiftUI
 
