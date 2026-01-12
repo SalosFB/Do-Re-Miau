@@ -44,11 +44,13 @@ struct PopupView: View {
                     // Criação de botões do pop-up
                     
                     VStack {
-                        CreateButton(label: "Níveis", icon: nil, widht: 300, height: 50, cornerRadius: 10, color: .corBotao, foregroundColor: .white, textSize: 30, imageSize: 0.5, action_status: {})
+                        CreateButton(label: "Níveis", icon: nil, widht: 300, height: 50, cornerRadius: 10, color: .corBotao, foregroundColor: .white, textSize: 30, imageSize: 1,  action_status: {
+                            
+                        })
                         
                             .padding(.bottom)
                         
-                        CreateButton(label: "Espaço Livre", icon: nil, widht: 300, height: 50, cornerRadius: 10, color: .corBotao, foregroundColor: .white, textSize: 30, imageSize: 0.3, action_status: {})
+                        CreateButton(label: "Espaço Livre", icon: nil, widht: 300, height: 50, cornerRadius: 10, color: .corBotao, foregroundColor: .white, textSize: 30, imageSize: 1, action_status: {})
                     }
                     .padding()
                         

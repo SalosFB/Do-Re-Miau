@@ -33,8 +33,7 @@ struct MainView: View {
                                     cornerRadius: 50,
                                     color: .corBotao,
                                     foregroundColor: .white,
-                                    textSize: 20,
-                                    imageSize: 0.5,
+                                    textSize: 20, imageSize: 0.6,
                                     action_status:{
                                     
                                     print("Ajudando...")})
@@ -58,8 +57,7 @@ struct MainView: View {
                                     cornerRadius: 50,
                                     color: .corBotao,
                                     foregroundColor: .white,
-                                    textSize: 20,
-                                    imageSize: 0.5,
+                                    textSize: 20, imageSize: 0.6,
                                     action_status: {print("Valeu...")})
                             
                             Text("Compartilhar")
@@ -94,8 +92,7 @@ struct MainView: View {
                                 cornerRadius: 15,
                                 color: .corBotao,
                                 foregroundColor: .white,
-                                textSize: 20,
-                                imageSize: 1.0,
+                                textSize: 20, imageSize: 1,
                                 action_status: {
                                 
                                 
@@ -109,8 +106,7 @@ struct MainView: View {
                                 cornerRadius: 15,
                                 color: .corBotao,
                                 foregroundColor: .white,
-                                textSize: 20,
-                                imageSize: 1.0,
+                                textSize: 20, imageSize: 1,
                                 action_status: {
                                 
                                 print("Menuzando...")
@@ -125,8 +121,7 @@ struct MainView: View {
                                 cornerRadius: 15,
                                 color: .corBotao,
                                 foregroundColor: .white,
-                                textSize: 20,
-                                imageSize: 1.0,
+                                textSize: 20, imageSize: 1,
                                 action_status: {
                                 
                                 print("Saindo...")

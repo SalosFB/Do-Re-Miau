@@ -9,7 +9,7 @@
 
 // 19/12/2025: Descicão do programa em: CreateNavigationButton.swift
     
-    // Criacão dos atrbutos do botão tipo Navigation Link, para navegacão entre telas
+// Criacão dos atrbutos do botão tipo Navigation Link, para navegacão entre telas
 
 import SwiftUI
 
@@ -40,19 +40,11 @@ struct CreateNavigationButton<Destination: View>: View { // definindo que a View
             
             ZStack{
                 
-                if let color {
-                    Rectangle()
-                        .fill(Color(color))
-                        .frame(width: widht, height: height)
-                        .cornerRadius(cornerRadius)
-                        .shadow(color: .gray, radius: 1, x: 0, y: 2)
-                } else {
-                    Rectangle()
-                        .opacity(0)
-                        .frame(width: widht, height: height)
-                        .cornerRadius(cornerRadius)
-                        .shadow(color: .gray, radius: 1, x: 0, y: 2)
-                }
+                Rectangle()
+                    .fill(Color(color ?? Color.corBotao))
+                    .frame(width: widht, height: height)
+                    .cornerRadius(cornerRadius)
+                    .shadow(color: .gray, radius: 1, x: 0, y: 2)
                 
                 // Conteúdo do botão de navegação dividido em if clauses, permitindo que o usuário possa editar nomes e/ou imagens Swift
                 
@@ -60,7 +52,7 @@ struct CreateNavigationButton<Destination: View>: View { // definindo que a View
                     
                     Label(label, systemImage: icon)
                         .imageScale(.large)
-                        .foregroundStyle(foregroundColor)
+                        .foregroundStyle(.white)
                         .font(.system(size: textSize))
                         .lineLimit(1)
                     
@@ -70,12 +62,12 @@ struct CreateNavigationButton<Destination: View>: View { // definindo que a View
                         Image(systemName: icon)
                             .resizable()
                             .scaledToFit()
-                            .foregroundStyle(foregroundColor)
+                            .foregroundStyle(.white)
                             .scaleEffect(imageSize)
                         
                     } else {
                         
-                        Image(icon).foregroundStyle(foregroundColor)
+                        Image(icon).foregroundStyle(.white)
                     }
                     
                 }  else if let label{
@@ -95,13 +87,13 @@ struct CreateNavigationButton<Destination: View>: View { // definindo que a View
 #Preview {
     CreateNavigationButton(
         destination: PopupView(),
-        label: nil,
+        label: "play",
         icon: "play.fill",
         widht: 300,
         height: 300,
         cornerRadius: 50,
-        color: nil,
-        foregroundColor: .black,
+        color: .corBotao,
+        foregroundColor: .white,
         textSize: 60,
         imageSize: 0.7,
         action_status: {

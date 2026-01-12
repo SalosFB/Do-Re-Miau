@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ScrollViewMusicNote: View {
-
+    
     let imageNames = ["nota_Semibreve", "nota_Minima", "nota_Seminima", "nota_Colcheia", "nota_Semicolcheia", "nota_Semifusa", "nota_Fusa"]
-
+    
     var body: some View {
+        NavigationStack{
             ZStack {
                 VStack {
                     ScrollView(.horizontal) {
@@ -24,7 +25,7 @@ struct ScrollViewMusicNote: View {
                         .padding(.horizontal, 280)
                         .padding(.vertical, 5)
                     }.contentMargins(.bottom, 116, for: .scrollIndicators)
-
+                    
                     HStack {
                         CreateNavigationButton(
                             destination: PopupView(),
@@ -35,12 +36,11 @@ struct ScrollViewMusicNote: View {
                             cornerRadius: 25,
                             color: .corBackground,
                             foregroundColor: .corBotao,
-                            textSize: 20,
-                            imageSize: 1.0,
+                            textSize: 20, imageSize: 1,
                             action_status: {
-                            
-                            
-                        })
+                                
+                                
+                            })
                         
                         CreateNavigationButton(
                             destination: PopupView(),
@@ -51,12 +51,11 @@ struct ScrollViewMusicNote: View {
                             cornerRadius: 25,
                             color: .corBackground,
                             foregroundColor: .corBotao,
-                            textSize: 20,
-                            imageSize: 1.0,
+                            textSize: 20, imageSize: 1,
                             action_status: {
-                            
-                            
-                        })
+                                
+                                
+                            })
                         
                         CreateNavigationButton(
                             destination: PopupView(),
@@ -67,12 +66,11 @@ struct ScrollViewMusicNote: View {
                             cornerRadius: 25,
                             color: .corBackground,
                             foregroundColor: .corBotao,
-                            textSize: 20,
-                            imageSize: 1.0,
+                            textSize: 20, imageSize: 1,
                             action_status: {
-                            
-                            
-                        })
+                                
+                                
+                            })
                     }
                     .padding(.horizontal, 200)
                     .padding(.bottom, 5)
@@ -82,6 +80,7 @@ struct ScrollViewMusicNote: View {
             .background(Color.corPrimaryWhite)
             .clipShape(RoundedRectangle(cornerRadius: 125))
             .padding(85)
+        }
     }
 }
 
